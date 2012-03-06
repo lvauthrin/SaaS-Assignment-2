@@ -48,6 +48,6 @@ module Enumerable
   
 end
 
-puts [1,2,3,2,1].palindrome?
-puts [1,2,3,4,1].palindrome?
-puts [:a=>1].palindrome?
+# puts [1,2,3,2,1].palindrome?
+# puts [1,2,3,4,1].palindrome?
+# puts [:a=>1].palindrome?
