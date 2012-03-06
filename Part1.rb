@@ -1,7 +1,7 @@
 # metaprogramming to the rescue!
 
 class Numeric
-  @@currencies = {'dollar' => 1, 'yen' => 0.0123, 'euro' =>  1.3225, 'rupee' => 0.020}
+  @@currencies = {'dollar' => 1, 'yen' => 0.013, 'euro' =>  1.292, 'rupee' => 0.019}
   def method_missing(method_id)
     singular_currency = method_id.to_s.gsub( /s$/, '')
     if @@currencies.has_key?(singular_currency)
@@ -43,10 +43,11 @@ end
 module Enumerable
   
   def palindrome?
-    self.join.palindrome?
+    self.to_s.palindrome?
   end
   
 end
 
-# puts [1,2,3,2,1].palindrome?
-# puts [1,2,3,4,1].palindrome?
+puts [1,2,3,2,1].palindrome?
+puts [1,2,3,4,1].palindrome?
+puts [:a=>1].palindrome?
