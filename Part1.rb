@@ -29,7 +29,6 @@ end
 class String
   
   def palindrome?
-    return false if self.nil?
     cleanString = self.gsub(/\W/, '').downcase
     return cleanString.eql?(cleanString.reverse)
   end
@@ -43,11 +42,13 @@ end
 module Enumerable
   
   def palindrome?
-    self.to_s.palindrome?
+    a = []; b = []
+    self.each { |element| a = a.unshift(element); b.push(element)}
+    return a == b
   end
   
 end
 
 # puts [1,2,3,2,1].palindrome?
 # puts [1,2,3,4,1].palindrome?
-# puts [:a=>1].palindrome?
+# puts [:a=>1, :b=>2].palindrome?
